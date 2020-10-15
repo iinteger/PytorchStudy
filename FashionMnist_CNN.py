@@ -71,6 +71,7 @@ def train(model, train_loader, optimizer):
         if batch_idx % 200 == 0:
             print("Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss:{:.6f}".format(epoch, batch_idx * len(data), len(train_loader.dataset), 100.*batch_idx/len(train_loader), loss.item()))
 
+
 def evaluate(model, test_loader):
     model.eval()  # 모델을 평가 모드로 전환
     test_loss = 0
@@ -97,3 +98,4 @@ for epoch in range(1, EPOCHS+1):
     test_loss, test_accuracy = evaluate(model, test_loader)
 
     print('[{}] Test Loss: {:.4f}, Accuracy: {:.2f}%'.format(epoch, test_loss, test_accuracy))
+
